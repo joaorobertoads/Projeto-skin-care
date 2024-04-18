@@ -1,0 +1,77 @@
+body {
+    background-color: #ffb3c6;
+    background-image: image(Logobg.png);
+    background-size: 73%;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: purple;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff8fab;
+    padding: 1px;
+    text-align: left;
+    color: purple;
+}
+
+header h1 {
+    font-family: 'Tahoma', sans-serif;
+    margin: 0;
+}
+
+table {
+    font-weight: bold;
+    font-size: large;
+    padding: 0;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 15px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: large;
+    color: purple;
+}
+
+section {
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    width: 78%;
+    margin: auto;
+}
+
+.product {
+    display: inline-block;
+    margin: 20px;
+}
+
+.product img {
+    width: 200px;
+    height: auto;
+}
+
+footer {
+    background-color: brown;
+    color: white;
+    padding: 1px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width:100%;
+}
