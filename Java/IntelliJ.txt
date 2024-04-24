@@ -1,0 +1,149 @@
+Aqui está um exemplo de um projeto Java usando o IntelliJ com uma classe factory para se conectar ao banco de dados MySQL:
+
+Criar o Projeto no IntelliJ:Abra o IntelliJ IDEA e selecione "Create New Project".
+Configurar o Projeto:
+Selecione "Java" como o tipo de projeto.
+Escolha o SDK desejado.
+Clique em "Next".
+Configurar o Projeto (Continuação):
+Nomeie o projeto e escolha o local onde deseja salvá-lo.
+Clique em "Finish".
+
+Adicionar o Driver JDBC do MySQL:Se você ainda não adicionou o driver JDBC do MySQL ao seu projeto, siga estas etapas:
+
+Baixe o driver MySQL Connector/J do site oficial da MySQL (https://dev.mysql.com/downloads/connector/j/).
+Extraia o arquivo .zip baixado.
+
+No IntelliJ, clique com o botão direito no diretório "libs" do seu projeto e selecione "Add as Library...".
+
+Criar a Classe Factory para Conexão com o Banco de Dados:Vamos criar uma classe chamada ConnectionFactory que será responsável por estabelecer a conexão com o banco de dados. Aqui está um exemplo:
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Main{
+
+    // Configurações de conexão
+    private static final String URL = "jdbc:mysql://localhost:3306/skincare";
+    private static final String USER = skincare";
+    private static final String PASSWORD = "skincare";
+
+    // Método para obter conexão
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+
+Substitua "seu_banco_de_dados", "seu_usuario" e "sua_senha" pelos detalhes de conexão ao seu banco de dados MySQL.
+
+Utilizar a Classe Factory para Conectar ao Banco de Dados: Agora você pode usar a classe ConnectionFactory para obter conexões com o banco de dados em qualquer lugar do seu projeto.
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class Main {
+
+    public static void main(String[] args) {
+        try {
+            // Obtém uma conexão com o banco de dados
+            Connection connection = ConnectionFactory.getConnection();
+
+            // Faça o que precisar com a conexão aqui
+
+            // Não esqueça de fechar a conexão quando terminar
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Isso é tudo! Você agora tem um projeto Java no IntelliJ IDEA com uma classe factory para conectar-se ao seu banco de dados MySQL. Certifique-se de ter o servidor MySQL em execução localmente para testar a conexão.
+
+Aqui está um exemplo de como você pode criar uma classe ClienteController em Java para lidar com os dados enviados pelo formulário web:
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Main{
+
+    public void inserirDadosFormulario(String nome, String email, String tipoPele, String protetorSolar, String alergia,
+                                       String alergiaInforme, String rotinasCuidados, String melasmaFamilia,
+                                       String contraindicacao) {
+        // Obtém uma conexão com o banco de dados
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            // Define a query SQL para inserção de dados
+            String query = "INSERT INTO skin_care_form (nome, email, tipo_de_pele, protetor_solar, alergia, alergia_informe, " +
+                    "rotinas_cuidados, melasma_familia, contraindicacao) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+            // Cria um objeto PreparedStatement com a query SQL
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                // Define os parâmetros da query com os dados do formulário
+		preparedStatement.setString(1, nome);
+		preparedStatement.setString(2, email);
+                preparedStatement.setString(3, tipoPele);
+                preparedStatement.setString(4, protetorSolar);
+                preparedStatement.setString(5, alergia);
+                preparedStatement.setString(6, alergiaInforme);
+                preparedStatement.setString(7, rotinasCuidados);
+                preparedStatement.setString(8, melasmaFamilia);
+                preparedStatement.setString(9, contraindicacao);
+
+                // Executa a query de inserção
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Trate a exceção de acordo com a necessidade do seu aplicativo
+        }
+    }
+
+    public static ClienteController controller = new ClienteController();
+        // Aqui você chamaria o método inserirDadosFormulario() com os dados do formulário
+        controller.inserirDadosFormulario("Oleosa", "sim", "sim", "Alergia a pólen", "sim", "nao", "Nenhuma");
+    }
+}
+
+Neste exemplo, a classe ClienteController tem um método inserirDadosFormulario() que recebe os dados do formulário como parâmetros e os insere na tabela skin_care_form do banco de dados. Certifique-se de substituir os valores dos parâmetros pelos dados reais do formulário.
+
+---
+
+Aqui está uma estrutura básica de como você pode transformar o formulário HTML em uma estrutura Java para uma aplicação web:
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/formulario")
+public class FormularioServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Recupera os parâmetros enviados pelo formulário
+	String nome = request.getParameter("nome)";
+        String email = request.getParameter("email");
+        String tipoPele = request.getParameter("tipo_de_pele");
+        String protetorSolar = request.getParameter("protetor_solar");
+        String alergia = request.getParameter("alergia");
+        String alergiaInforme = request.getParameter("alergia_informe");
+        String rotinasCuidados = request.getParameter("rotinas_cuidados");
+        String melasmaFamilia = request.getParameter("melasma_familia");
+        String contraindicacao = request.getParameter("contraindicacao");
+
+        // Aqui você pode fazer o que desejar com os dados, como salvar em um banco de dados
+
+        // Redireciona para uma página de confirmação ou outra página
+        response.sendRedirect("confirmacao.html");
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Este método é chamado quando a página é acessada pelo método GET
+        // Aqui você pode exibir o formulário HTML para o usuário preencher
+        // Você pode retornar uma página JSP ou HTML
+        response.sendRedirect("formulario.html");
+    }
+}
