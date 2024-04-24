@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOS Skin Care - Formulário</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 align="center">
+        <a href="Início.html"
+          ><img width="80px" height="30px" align="center" src="logos/logohc.png" /></a
+        >SKIN CARE
+        <nav>
+          <ul align="center">
+            <li><a href="Início.html">INÍCIO</a></li>
+            <li><a href="Categorias.html">PRODUTOS</a></li>
+            <li><a href="Sobre.html">SOBRE</a></li>
+          </ul>
+        </nav>
+      </h1>
+    </header>
+
+    <form align="center" action="#" method="POST">
+      <fieldset>
+        <legend>Qual o seu tipo de pele?</legend>
+        <label>
+          <input type="radio" name="tipo_de_pele" value="oleosa" />
+          Oleosa</label
+        >
+        <label
+          ><input type="radio" name="tipo_de_pele" value="seca" /> Seca</label
+        >
+        <label
+          ><input type="radio" name="tipo_de_pele" value="mista" /> Mista</label
+        >
+        <label
+          ><input type="radio" name="tipo_de_pele" value="acneica" />
+          Acneica</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Você usa protetor solar com frequência?</legend>
+        <label
+          ><input type="radio" name="protetor_solar" value="sim" /> Sim</label
+        >
+        <label
+          ><input type="radio" name="protetor_solar" value="nao" /> Não</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Possui alguma alergia?</legend>
+        <label><input type="radio" name="alergia" value="sim" /> Sim</label>
+        <label><input type="radio" name="alergia" value="nao" /> Não</label>
+        <label
+          >(Caso sim, informe a alergia):
+          <input type="text" name="alergia_informe"
+        /></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tem rotinas de cuidados com a pele com frequência?</legend>
+        <label
+          ><input type="radio" name="rotinas_cuidados" value="sim" /> Sim</label
+        >
+        <label
+          ><input type="radio" name="rotinas_cuidados" value="nao" /> Não</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Tem casos de melasma na família?</legend>
+        <label>
+          <input type="radio" name="melasma_familia" value="sim" /> Sim</label
+        >
+        <label>
+          <input type="radio" name="melasma_familia" value="nao" /> Não</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Possui alguma contraindicação?</legend>
+        <textarea name="contraindicacao" rows="4" cols="50"></textarea>
+      </fieldset>
+
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <footer>
+      <p>&copy; 2024 SOS SKIN CARE</p>
+    </footer>
+  </body>
+</html>

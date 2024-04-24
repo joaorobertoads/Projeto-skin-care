@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Skin Care</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SOS SKIN CARE</h1>
+        <img width="500px" height="300px" src="skincare.png">
+        <nav>
+            <ul>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#produtos">PRODUTOS</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>SOBRE NÓS</h2>
+            <p><big><b>
+            Somos apaixonados por beleza natural. Nossos produtos são feitos com ingredientes orgânicos e sustentáveis.
+            SOS SKIN CARE é uma empresa comprometida com a missão de proporcionar cuidados excepcionais para a pele, resgatando a saúde e a 
+            beleza natural de todos os tipos de pele. acreditamos que a pele saudável é fundamental para o bem-estar geral e a autoconfiança.
+            Nossa filosofia é baseada na abordagem holística do cuidado da pele, combinando ciência avançada com ingredientes naturais para criar
+            produtos que nutrem, protegem e revitalizam a pele de dentro para fora. Nosso objetivo é fornecer soluções de cuidados com a pele que
+            sejam acessíveis, eficazes e inspiradoras, capacitando nossos clientes a alcançar sua melhor versão. 
+            </b></big></p>
+        </div>
+    </section>
+
+    <hr size="4" color="fb6f92" align="left">
+
+    <section id="produtos">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <div class="product">
+                <img src="product1.jpg" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>Descrição do Produto 1</p>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>Descrição do Produto 2</p>
+            </div>
+        </div>
+    </section>
+
+    <hr size="4" color="fb6f92" align="left">
+
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <p>
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name" size="30" required>
+                <p>
+                
+                <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" size="30" required><br>
+                </p>
+
+                <p>
+                <label for="message">Mensagem:</label><br>
+                <textarea id="message" name="message" rows="12" cols="30" required></textarea><br>
+                <button type="submit">Enviar</button>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SOS SKIN CARE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

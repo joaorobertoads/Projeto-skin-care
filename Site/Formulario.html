@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOS Skin Care - Formulário</title>
+  <link rel="icon" href="logos/logohd.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1 align="center">
+      <a href="Inicio.html"><img width="80px" height="30px" src="logos/logohc.png"></a>SKIN CARE<br>
+      <font size="4" color="brown">SOLUÇÕES PARA A SUA PELE</font>
+      <nav>
+        <ul>
+          <li><a href="Inicio.html">INÍCIO</a></li>
+          <li><a href="Categorias.html">PRODUTOS</a></li>
+          <li><a href="Sobre.html">SOBRE</a></li>
+        </ul>
+      </nav>
+    </h1>
+  </header>
+
+      <section id="formulario">
+      <form class="form-group" action="Confirmacao.html" method="POST">
+
+      <fieldset class="group">
+        <div class="form-group">
+          <label>Nome:</label>
+          <div>
+            <input type="text" name="nome" id="nome" size="30">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>E-mail:</label>
+        <div>
+          <input type="text" name="email" id="email" size="30">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="group">
+      <div class="form-pele">
+        <label for="tipo_de_pele">Qual o seu tipo de pele?</label><br>
+        <select name="tipo_de_pele" id="tipo_de_pele">
+          <option>Selecione</option>
+          <option>Oleosa</option>
+          <option>Seca</option>
+          <option>Mista</option>
+          <option>Acneica</option>
+        </select>
+      </div>
+
+      <div class="form-pele">
+        <label>Tem rotinas de cuidados com a pele?</label>
+        <div>
+          <label><input type="radio" name="rotinas_cuidados" value="sim"> Sim</label>
+          <label><input type="radio" name="rotinas_cuidados" value="nao"> Não</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="group">
+      <div class="form-alergia">
+        <label>Possui alguma alergia?</label>
+        <div>
+          <label><input type="radio" name="alergia" value="sim"> Sim</label>
+          <label><input type="radio" name="alergia" value="nao"> Não</label>
+        </div>
+      </div>
+    
+      <div class="form-alergia">
+        <label>(Caso sim, informe a alergia):</label>
+        <div>
+          <input type="text" name="alergia_informe" size="30">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="group">
+      <div class="form-melasma">
+        <label>Você usa protetor solar?</label>
+        <div>
+          <label><input type="radio" name="protetor_solar" value="sim"> Sim</label>
+          <label><input type="radio" name="protetor_solar" value="nao"> Não</label>
+        </div>
+      </div>
+
+      <div class="form-melasma">
+        <label>Tem casos de melasma na família?</label>
+        <div>
+          <label><input type="radio" name="melasma_familia" value="sim"> Sim</label>
+          <label><input type="radio" name="melasma_familia" value="nao"> Não</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-textarea">
+      <div class="form-group">
+        <label>Possui alguma contraindicação?</label>
+      </div>
+
+      <div>
+        <textarea name="contraindicacao" rows="6" cols="40" class="no-resize"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button class="botao" type="reset">Limpar</button>
+        <button class="botao" type="submit">Enviar</button>
+      </div>
+    </fieldset>
+
+    </div>
+    </form>
+    </section>
+
+  <footer>
+    <p>&copy; 2024 SOS SKIN CARE</p>
+  </footer>
+</body>
+
+</html>
